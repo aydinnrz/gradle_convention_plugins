@@ -14,6 +14,8 @@ kotlin-gradle-plugin = "1.8.21"
 ## plugins
 android-application = "8.1.1"
 android-kotlin = "1.9.10"
+appcompat = "1.6.1"
+material = "1.9.0"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
@@ -32,6 +34,8 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest"}
 android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "android-gradle-plugin" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-gradle-plugin" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [bundles]
 compose  = [ "compose-ui", "compose-ui-graphics", "compose-ui-tooling-preview", "compose-material3"]
@@ -39,3 +43,4 @@ compose  = [ "compose-ui", "compose-ui-graphics", "compose-ui-tooling-preview", 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-application" }
 android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "android-kotlin" }
+com-android-library = { id = "com.android.library", version.ref = "android-application" }
