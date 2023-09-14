@@ -1,6 +1,6 @@
 package plugins
 
-import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.dsl.LibraryExtension
 import config.Config
 import extensions.configureAndroidKotlin
 import extensions.configureBuildTypes
@@ -8,21 +8,18 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
-class AndroidAppConventionPlugin : Plugin<Project> {
+class AndroidLibConventionPlugin : Plugin<Project> {
     override fun apply(project: Project) {
-        with(project) {
+        with(project){
             with(pluginManager) {
-                apply("com.android.application")
+                apply("com.android.library")
                 apply("kotlin-android")
             }
-            extensions.configure<ApplicationExtension> {
+            extensions.configure<LibraryExtension> {
+                configureAndroidKotlin(this)
                 defaultConfig.apply {
                     targetSdk = Config.android.targetSdkVersion
-                    applicationId = Config.android.applicationId
-                    versionCode = Config.android.versionCode
-                    versionName = Config.android.versionName
                 }
-                configureAndroidKotlin(this)
                 configureBuildTypes(this)
             }
         }
