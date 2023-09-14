@@ -25,5 +25,13 @@ gradlePlugin {
             id = "conventionPluginsApp.android.application"
             implementationClass = "plugins.AndroidAppConventionPlugin"
         }
+        register("androidAppCompose") {
+            id = "conventionPluginsApp.android.app.compose"
+            implementationClass = "plugins.AndroidAppComposeConventionPlugin"
+        }
+        register("androidLibCompose") {
+            id = "conventionPluginsApp.android.lib.compose"
+            implementationClass = "plugins.AndroidLibComposeConventionPlugin"
+        }
     }
 }
